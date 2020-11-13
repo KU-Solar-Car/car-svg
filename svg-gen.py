@@ -1,3 +1,8 @@
+"""
+Python3.6+ script to generate a tile overlay. Excess tiles must be manually removed.
+Not an example of good code.
+"""
+
 SCALE = .27
 
 def draw_tile(x, y):
@@ -43,22 +48,22 @@ def draw_thin_row(x, y):
 def draw_additional_groups(x, y):
 	str = ""
 
-	# First column.
-	str = draw_group(x, y, 2, 2)
-	str = str + draw_group(x+0, y+230, 3, 2)
-	str = str + draw_group(x+0, y+569, 2, 2)
+	# First column. Second additions is manual adjustment.
+	str = draw_group(x, y+40, 2, 2)
+	str = str + draw_group(x+0, y+230+40, 3, 2)
+	str = str + draw_group(x+0, y+569+40, 2, 2)
 
 	# Second column.
-	str = str + draw_group(x+230, y+192, 1, 1)
-	str = str + draw_group(x+230, y+313, 3, 2)
-	str = str + draw_group(x+230, y+652, 1, 1)
+	str = str + draw_group(x+230, y+141+10, 1, 1)
+	str = str + draw_group(x+230, y+262+10, 3, 2)
+	str = str + draw_group(x+230, y+601+10, 1, 1)
 
 	return str
 
 
 def draw():
 	# Generate string to draw tile layout.
-	top_padding = 30
+	top_padding = 33
 	side_padding = 43
 
 	# Main rows.
