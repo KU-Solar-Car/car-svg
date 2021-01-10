@@ -23,7 +23,6 @@ function parse(csv_string) {
       donor_list.push({name: donor_name, amount: donor_amount, cells: donor_cells})
     }
   }
-  console.log(donor_list);
 }
 
 var textdiv = document.getElementById("donor-text-box");
@@ -34,20 +33,22 @@ var car = document.getElementById("car");
 car.addEventListener('load', (event) => {
   var svg_doc = car.contentDocument;
   cells = svg_doc.getElementsByTagName("polygon");
-  console.log(cells);
 
   for(let i=0; i < cells.length; i++) {
     if(i < donor_list.length) {
       cells[i].addEventListener("mouseover", (event) => {
-        var text_to_display = "Donor: " + donor_list[i].name;
+        var text_to_display = donor_list[i].name + "\n" + donor_list[i].amount;
         text_elem.innerText = text_to_display;
         textdiv.hidden = false;
+        cells[i].style.fill = "#e4e4e7"
+        console.log("over")
       });
       cells[i].addEventListener("mouseout", (event) => {
         textdiv.hidden = true;
+        cells[i].style.fill = "#3b3c3e"
       });
+    } else {
+      cells[i].style.opacity = "0.7"
     }
-    
-    
   }
 });
