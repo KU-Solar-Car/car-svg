@@ -1,7 +1,7 @@
 <div style="border-style: solid; height: 500px; width: 100%; padding: 0; margin: 0">
 		<div style="width: 300px; height: 75px; padding: 0; margin: 10px auto 10px auto">
-		<div id="donor-text-box" style="width: 300px; height: 75px; padding: 0; margin: 10px auto 10px auto; border-style: solid; border-color: #3b3c3e; border-radius: 5px; border-width: 1px">
-			<p id="donor-text" style="text-align: center; margin: 0; padding: 25px 0">Text</p>
+		<div id="donor-text-box" style="width: 300px; height: 75px; padding: 0; margin: 10px auto 10px auto; border-style: solid; border-color: #FF0A28; border-radius: 5px; border-width: 2px">
+			<p id="donor-text" style="text-align: center; margin: 0; padding: 25px 0; color: black; font-family: sans-serif; font-size: 16px;">Text</p>
 		</div>
 	</div>
 		<div style="width: 90%; height: 250px; margin: auto">
@@ -241,10 +241,7 @@
 	let csv_string = "";
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
-			console.log(this.readyState)
-			console.log(this.status)
 			if (this.readyState == 4 && this.status == 200) {
-				console.log("parsing")
 	 			parse(this.responseText);
 		}
 	};
